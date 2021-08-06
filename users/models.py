@@ -29,12 +29,14 @@ class CustomUser(AbstractUser):
     email = models.EmailField(verbose_name=_("email address"), unique=True)
 
     full_name = models.CharField(verbose_name=_("full name"), max_length=300)
+    
+    phone_number = models.CharField(verbose_name=_("phone number"), max_length=20, default="000-000-0000-0000")
 
-    picture = models.ImageField(
-        verbose_name=_("picture"),
-        default="images/default/pic.png",
-        upload_to=user_upload_to,
-    )
+    # picture = models.ImageField(
+    #     verbose_name=_("picture"),
+    #     default="images/default/pic.png",
+    #     upload_to=user_upload_to,
+    # )
 
     class Meta:
         """Meta data."""
